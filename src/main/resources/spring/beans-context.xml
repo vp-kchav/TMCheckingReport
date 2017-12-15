@@ -62,5 +62,13 @@
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
 		<property name="defaultLocale" value="en_US" />
 	</bean>
+	
+	<bean id="TMReportService" class="mum.edu.service.impl.TMReportServiceImpl">
+		<property name="reportDao" ref="TMReportDao" />
+	</bean>
+	
+	<bean id="TMReportDao" class="mum.edu.dao.impl.TMReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 
 </beans>
