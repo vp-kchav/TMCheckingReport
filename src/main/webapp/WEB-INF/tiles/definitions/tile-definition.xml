@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	
+	<definition name="baseLayout" template="/WEB-INF/tiles/template/layoutTemplate.jsp">
+		<put-attribute name="title" value="RealestateManagement" />
+		<put-attribute name="header" value="/WEB-INF/tiles/template/header.jsp" />
+		<put-attribute name="tagline" value="default.tagline" />
+		<put-attribute name="navigation" value="/WEB-INF/tiles/template/navigation.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp" />
+	</definition>
+</tiles-definitions>
