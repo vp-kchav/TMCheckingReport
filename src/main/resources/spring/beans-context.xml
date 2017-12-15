@@ -71,4 +71,11 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 
+	<bean id="StudentDao" class="mum.edu.dao.impl.StudentDoaImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<bean id="StudentService" class="mum.edu.service.impl.StudentServiceImpl">
+		<property name="studentDao" ref="StudentDao"/>
+	</bean>
 </beans>
