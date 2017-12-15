@@ -70,4 +70,5 @@
 		<property name="defaultTransactionIsolation" value="2" />
 	</bean>
 	
+	
 </beans>
