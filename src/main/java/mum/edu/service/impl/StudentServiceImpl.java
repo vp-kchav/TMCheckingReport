@@ -26,7 +26,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public StudentServiceImpl(){
-        
+
     }
 
     public StudentDao getStudentDao() {
