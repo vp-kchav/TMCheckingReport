@@ -63,11 +63,21 @@
 		<property name="defaultLocale" value="en_US" />
 	</bean>
 	
-	<bean id="TMReportService" class="mum.edu.service.impl.TMReportServiceImpl">
-		<property name="reportDao" ref="TMReportDao" />
+	<!--  injected services and dao -->
+	
+	<bean id="reportService" class="mum.edu.service.impl.TMReportServiceImpl">
+		<property name="reportDao" ref="reportDao" />
 	</bean>
 	
-	<bean id="TMReportDao" class="mum.edu.dao.impl.TMReportDaoImpl">
+	<bean id="reportDao" class="mum.edu.dao.impl.TMReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="userService" class="mum.edu.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	
+	<bean id="userDao" class="mum.edu.dao.impl.UserDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 
