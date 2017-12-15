@@ -20,14 +20,8 @@
 			<div class="container">
 				<div class="spacer">
 					<div class="row">
-						<h3><spring:message code="home.about.us" text="About Us"/></h3>
+						<h3><spring:message code="home.about.us" text="test"/></h3>
 						<p>
-							The Top Rated TV Shows list only includes TV series and TV mini
-							series.<br /> The list is ranked by a formula which includes the
-							number of ratings each show received from users, and value of
-							ratings received from regular users. To be included on the list,
-							a series or mini series must receive ratings from at least 5000
-							users, and a TV series must also have aired at least 5 episodes
 						</p>
 
 					</div>
