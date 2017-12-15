@@ -1,6 +1,14 @@
 package mum.edu.domain;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "student")
@@ -16,7 +24,7 @@ public class Student {
     private String lastName;
     @Embedded
     private Address studentAddress;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     public Student(){
