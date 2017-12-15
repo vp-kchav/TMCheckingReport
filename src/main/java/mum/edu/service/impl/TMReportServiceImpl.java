@@ -10,6 +10,7 @@ import mum.edu.domain.TMCheckingReport;
 import mum.edu.service.TMReportService;
 
 public class TMReportServiceImpl implements TMReportService{
+    
     TMReportDao reportDao;
 
     public TMCheckingReport save(TMCheckingReport report) {

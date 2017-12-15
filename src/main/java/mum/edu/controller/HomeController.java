@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import mum.edu.service.StudentService;
 import mum.edu.service.TMReportService;
+import mum.edu.service.UserService;
 
 
 @Controller
@@ -18,6 +20,12 @@ public class HomeController {
 
     @Autowired
     TMReportService service;
+    
+    @Autowired
+    StudentService studentService;
+    
+    @Autowired
+    UserService userService;
 
     @RequestMapping(value = { "/", "/index", "/home" }, method = RequestMethod.GET)
     public String index(Model model) {       
