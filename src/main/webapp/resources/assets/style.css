@@ -165,3 +165,6 @@ h2{font-size: 25px;}
     font-size: 25px;
     margin-left: 10px;
 }
+table{
+	color:#555;	font:normal 13px/22px Arial;	background:url(../images/bgmain.png) #eee;
+}

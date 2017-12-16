@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "student")
@@ -22,14 +23,21 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotNull
     @Column(name = "studentId")
     private String studentId;
+    @NotNull
     @Column(name = "firstName")
     private String firstName;
+    @NotNull
     @Column(name = "lastName")
     private String lastName;
+    @NotNull
+    @Column(name = "email")
+    private String email;
     @Embedded
     private Address studentAddress;
+    @NotNull
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
@@ -98,4 +106,13 @@ public class Student {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 }

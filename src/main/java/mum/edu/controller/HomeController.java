@@ -35,7 +35,7 @@ public class HomeController {
     @RequestMapping(value="/test")
     public String email() {
         SimpleMailMessage email = new SimpleMailMessage();
-        email.setTo("kchav@mum.edu");
+        email.setTo("fhabibullaev@mum.edu");
         email.setSubject("Hello World");
         email.setText("this is a email from mum");
         sender.send(email);
