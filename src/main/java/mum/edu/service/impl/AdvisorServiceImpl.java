@@ -20,28 +20,28 @@ public class AdvisorServiceImpl implements IAdvisorService{
 	
 	@Transactional
 	@Override
-	public int addAdvisor(Advisor advisor) {
+	public long addAdvisor(Advisor advisor) {
 		// TODO Auto-generated method stub
 		return advisorDao.addAdvisor(advisor);
 	}
 
 	@Transactional
 	@Override
-	public void deleteAdvisor(int id) {
+	public void deleteAdvisor(long id) {
 		// TODO Auto-generated method stub
 		advisorDao.deleteAdvisor(id);
 	}
 
 	@Transactional
 	@Override
-	public void updateAdvisor(int id, Advisor advisor) {
+	public void updateAdvisor(long id, Advisor advisor) {
 		// TODO Auto-generated method stub
 		advisorDao.updateAdvisor(advisor, id);
 		
 	}
 
 	@Override
-	public Advisor getAdvisor(int id) {
+	public Advisor getAdvisor(long id) {
 		// TODO Auto-generated method stub
 		return advisorDao.getAdvisor(id);
 	}
@@ -64,4 +64,13 @@ public class AdvisorServiceImpl implements IAdvisorService{
 		return null;
 	}
 
+	public IAdvisorDao getAdvisorDao() {
+		return advisorDao;
+	}
+
+	public void setAdvisorDao(IAdvisorDao advisorDao) {
+		this.advisorDao = advisorDao;
+	}
+
+	
 }

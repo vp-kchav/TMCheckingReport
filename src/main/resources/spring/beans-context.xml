@@ -88,10 +88,10 @@
 	<bean id="StudentService" class="mum.edu.service.impl.StudentServiceImpl">
 		<property name="studentDao" ref="StudentDao"/>
 	</bean>
-	<bean id="advisorService" class="mum.edu.service.impl.AdvisorServiceImpl">
-		<property name="advisorDao" ref="advisorDao"/>
-	</bean>
 	<bean id="advisorDao" class="mum.edu.dao.impl.AdvisorDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="advisorService" class="mum.edu.service.impl.AdvisorServiceImpl">
+		<property name="advisorDao" ref="advisorDao"/>
 	</bean>
 </beans>
