@@ -43,10 +43,10 @@ public class Student {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "student_id")
-    private List<TMChecking> _TmCheckings;
+    private List<TMCheckingReport> _TmCheckings;
     
     
-    public List<TMChecking> getTmCheckings() {
+    public List<TMCheckingReport> getTmCheckings() {
         return _TmCheckings;
     }
 
@@ -54,7 +54,7 @@ public class Student {
         
     }
     
-    public void setTmCheckings(List<TMChecking> tmCheckings) {
+    public void setTmCheckings(List<TMCheckingReport> tmCheckings) {
         _TmCheckings = tmCheckings;
     }
 
