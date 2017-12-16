@@ -5,17 +5,20 @@ package mum.edu.domain;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class TMCheckingReport {
+public class TMChecking {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
@@ -27,10 +30,24 @@ public class TMCheckingReport {
     @Enumerated(EnumType.STRING)
     private CheckingStatus status;
         
-    public TMCheckingReport() {
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "advisor_id")
+    private Advisor checkBy;
+
+    public TMChecking() {
+    }
+    
+    public Advisor getCheckBy() {
+        return checkBy;
     }
 
-    public TMCheckingReport(Long id, Date checkingDate, CheckingStatus status) {
+    
+    public void setCheckBy(Advisor checkBy) {
+        this.checkBy = checkBy;
+    }
+
+
+    public TMChecking(Long id, Date checkingDate, CheckingStatus status) {
         super();
         this.id = id;
         this.checkingDate = checkingDate;

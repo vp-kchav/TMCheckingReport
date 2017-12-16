@@ -19,7 +19,7 @@ public class AdvisorDaoImpl implements IAdvisorDao {
 	
 
 	@Override
-	public int addAdvisor(Advisor advisor) {
+	public Long addAdvisor(Advisor advisor) {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().save(advisor);
 		return advisor.getId();

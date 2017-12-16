@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import mum.edu.dao.IAdvisorDao;
 import mum.edu.domain.Advisor;
 import mum.edu.service.IAdvisorService;
-import mum.edu.service.TMReportService;
+import mum.edu.service.TMCheckingService;
 
 @Service
 @Transactional (readOnly=true)
@@ -20,7 +20,7 @@ public class AdvisorServiceImpl implements IAdvisorService{
 	
 	@Transactional
 	@Override
-	public int addAdvisor(Advisor advisor) {
+	public Long addAdvisor(Advisor advisor) {
 		// TODO Auto-generated method stub
 		return advisorDao.addAdvisor(advisor);
 	}
@@ -53,13 +53,13 @@ public class AdvisorServiceImpl implements IAdvisorService{
 	}
 
 	@Override
-	public List<TMReportService> getStudentTMRport(int studentid) {
+	public List<TMCheckingService> getStudentTMRport(int studentid) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<TMReportService> getAllStudentTMReport() {
+	public List<TMCheckingService> getAllStudentTMReport() {
 		// TODO Auto-generated method stub
 		return null;
 	}

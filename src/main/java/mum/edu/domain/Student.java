@@ -1,13 +1,19 @@
 package mum.edu.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,9 +33,23 @@ public class Student {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    public Student(){
-
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "student_id")
+    private List<TMChecking> _TmCheckings;
+    
+    
+    public List<TMChecking> getTmCheckings() {
+        return _TmCheckings;
     }
+
+    public Student(){
+        
+    }
+    
+    public void setTmCheckings(List<TMChecking> tmCheckings) {
+        _TmCheckings = tmCheckings;
+    }
+
 
     public Long getId() {
         return id;

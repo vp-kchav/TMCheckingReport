@@ -13,13 +13,13 @@ import javax.persistence.Id;
 public class Advisor {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	private Long id;
 	@Column(name="firstname")
 	private String firstname;
 	@Column(name="lastname")
 	private String lastname;
 	@Column(name="advisorid")
-	private int advisorid;
+	private String advisorid;
     @Embedded
     private Address address;
     @Enumerated(EnumType.STRING)
@@ -29,7 +29,7 @@ public class Advisor {
     	
     }
     
-    public Advisor(String firstname,String lastname,int advisorid, Address address) {
+    public Advisor(String firstname,String lastname,String advisorid, Address address) {
     	this.firstname=firstname;
     	this.lastname=lastname;
     	this.advisorid=advisorid;
@@ -57,10 +57,10 @@ public class Advisor {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	public int getAdvisorid() {
+	public String getAdvisorid() {
 		return advisorid;
 	}
-	public void setAdvisorid(int advisorid) {
+	public void setAdvisorid(String advisorid) {
 		this.advisorid = advisorid;
 	}
 	public Address getAddress() {
@@ -76,8 +76,12 @@ public class Advisor {
 				+ address + "]";
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
+	}
+	
+	public void setId(Long id) {
+	    this.id = id;
 	}
 
 }

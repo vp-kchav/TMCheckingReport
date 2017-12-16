@@ -65,11 +65,11 @@
 	
 	<!--  injected services and dao -->
 	
-	<bean id="reportService" class="mum.edu.service.impl.TMReportServiceImpl">
+	<bean id="reportService" class="mum.edu.service.impl.TMCheckingServiceImpl">
 		<property name="reportDao" ref="reportDao" />
 	</bean>
 	
-	<bean id="reportDao" class="mum.edu.dao.impl.TMReportDaoImpl">
+	<bean id="reportDao" class="mum.edu.dao.impl.TMCheckingDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
