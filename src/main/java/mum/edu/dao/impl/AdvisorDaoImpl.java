@@ -11,10 +11,10 @@ import org.springframework.stereotype.Repository;
 import mum.edu.dao.IAdvisorDao;
 import mum.edu.domain.Advisor;
 
-@Repository
+//@Repository
 public class AdvisorDaoImpl implements IAdvisorDao {
 	
-	@Autowired
+	//@Autowired
 	SessionFactory sessionFactory;
 	
 
