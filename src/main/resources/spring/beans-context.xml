@@ -65,11 +65,11 @@
 	
 	<!--  injected services and dao -->
 	
-	<bean id="reportService" class="mum.edu.service.impl.TMCheckingServiceImpl">
+	<bean id="reportService" class="mum.edu.service.impl.TMReportServiceImpl">
 		<property name="reportDao" ref="reportDao" />
 	</bean>
 	
-	<bean id="reportDao" class="mum.edu.dao.impl.TMCheckingDaoImpl">
+	<bean id="reportDao" class="mum.edu.dao.impl.TMReportDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
@@ -87,5 +87,11 @@
 
 	<bean id="StudentService" class="mum.edu.service.impl.StudentServiceImpl">
 		<property name="studentDao" ref="StudentDao"/>
+	</bean>
+	<bean id="advisorDao" class="mum.edu.dao.impl.AdvisorDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="advisorService" class="mum.edu.service.impl.AdvisorServiceImpl">
+		<property name="advisorDao" ref="advisorDao"/>
 	</bean>
 </beans>

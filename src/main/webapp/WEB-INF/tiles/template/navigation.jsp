@@ -40,8 +40,6 @@
 							</c:when>
 							<c:otherwise>
 								<li><a href="login"><spring:message code="menu.login" text="Log In"/></a></li>
-								<li><a href="addStudent"><spring:message code="menu.login" text="add student"/></a></li>
-								<li><a href="addAdvisor"><spring:message code="menu.login" text="add advisor"/></a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>

@@ -5,15 +5,13 @@ package mum.edu.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import mum.edu.service.StudentService;
-import mum.edu.service.TMCheckingService;
+import mum.edu.service.TMReportService;
 import mum.edu.service.UserService;
 
 
@@ -21,26 +19,13 @@ import mum.edu.service.UserService;
 public class HomeController {
 
     @Autowired
-    TMCheckingService service;
+    TMReportService service;
     
     @Autowired
     StudentService studentService;
     
     @Autowired
     UserService userService;
-    
-    @Autowired
-    JavaMailSender sender;
-    
-    @RequestMapping(value="/test")
-    public String email() {
-        SimpleMailMessage email = new SimpleMailMessage();
-        email.setTo("fhabibullaev@mum.edu");
-        email.setSubject("Hello World");
-        email.setText("this is a email from mum");
-        sender.send(email);
-        return "home";
-    }
 
     @RequestMapping(value = { "/", "/index", "/home" }, method = RequestMethod.GET)
     public String index(Model model) {       

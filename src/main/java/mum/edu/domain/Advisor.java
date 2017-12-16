@@ -13,7 +13,7 @@ import javax.persistence.Id;
 public class Advisor {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private long id;
 	@Column(name="firstname")
 	private String firstname;
 	@Column(name="lastname")
@@ -24,6 +24,7 @@ public class Advisor {
     private Address address;
     @Enumerated(EnumType.STRING)
     private Gender gender;
+    private String email;
     
     public Advisor() {
     	
@@ -76,12 +77,18 @@ public class Advisor {
 				+ address + "]";
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-	
-	public void setId(Long id) {
-	    this.id = id;
+
+	public String getEmail() {
+		return email;
 	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 
 }

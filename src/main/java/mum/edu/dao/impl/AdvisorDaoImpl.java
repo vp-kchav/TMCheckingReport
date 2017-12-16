@@ -11,22 +11,30 @@ import org.springframework.stereotype.Repository;
 import mum.edu.dao.IAdvisorDao;
 import mum.edu.domain.Advisor;
 
-@Repository
+//@Repository
 public class AdvisorDaoImpl implements IAdvisorDao {
 	
-	@Autowired
+	//@Autowired
 	SessionFactory sessionFactory;
 	
 
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 	@Override
-	public Long addAdvisor(Advisor advisor) {
+	public long addAdvisor(Advisor advisor) {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().save(advisor);
 		return advisor.getId();
 	}
 
 	@Override
-	public void updateAdvisor(Advisor advisor, int id) {
+	public void updateAdvisor(Advisor advisor, long id) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
 		Advisor advisorUpdated=(Advisor) session.byId(Advisor.class).load(id);
@@ -39,7 +47,7 @@ public class AdvisorDaoImpl implements IAdvisorDao {
 	}
 
 	@Override
-	public Advisor getAdvisor(int id) {
+	public Advisor getAdvisor(long id) {
 		// TODO Auto-generated method stub
 		return (Advisor) sessionFactory.getCurrentSession().get(Advisor.class, id);
 	}
@@ -56,7 +64,7 @@ public class AdvisorDaoImpl implements IAdvisorDao {
 	}
 
 	@Override
-	public void deleteAdvisor(int id) {
+	public void deleteAdvisor(long id) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
 		Advisor advisor=(Advisor) session.get(Advisor.class, id);

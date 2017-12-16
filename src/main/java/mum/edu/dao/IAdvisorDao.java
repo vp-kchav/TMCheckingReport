@@ -7,10 +7,10 @@ import mum.edu.domain.Advisor;
 
 public interface IAdvisorDao {
 	
-	public Long addAdvisor(Advisor advisor);
-	public void updateAdvisor(Advisor advisor, int id);
-	public Advisor getAdvisor(int id);
+	public long addAdvisor(Advisor advisor);
+	public void updateAdvisor(Advisor advisor, long id);
+	public Advisor getAdvisor(long id);
 	public List<Advisor> getAdvisors();
-	public void deleteAdvisor(int id);
+	public void deleteAdvisor(long id);
 
 }
