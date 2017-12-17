@@ -1,7 +1,7 @@
 package mum.edu.domain;
 
 public enum Gender {
-    FEMALE("M"),MALE("F");
+    FEMALE("F"),MALE("M");
 
     private final String value;
 

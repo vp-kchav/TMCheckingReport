@@ -22,51 +22,59 @@
         <div class="spacer">
             <div class="row">
                 <form:form modelAttribute="student" action="studentRegistration" method="post">
+                    <form:errors path="*" cssClass="errorBlock" element="div"/>
                     <table class="studentregister">
                         <tr>
                             <td>First Name</td>
                             <td><form:input type="text" path="firstName"/></td>
+                            <td><form:errors path="firstName" cssClass="error"/></td>
                         </tr>
                         <tr>
                             <td>Last Name</td>
                             <td><form:input type="text" path="lastName"/></td>
+                            <td><form:errors path="lastName" cssClass="error"/></td>
                         </tr>
                         <tr>
                             <td>Student Id</td>
                             <td><form:input type="text" path="studentId"/></td>
+                            <td><form:errors path="studentId" cssClass="error"/></td>
                         </tr>
                         <tr>
                             <td>Email</td>
                             <td><form:input type="email" path="email"/></td>
+                            <td><form:errors path="email" cssClass="error"/></td>
                         </tr>
                         <tr>
                             <td>Street</td>
                             <td><form:input type="text" path="studentAddress.street"/></td>
+                            <td><form:errors path="studentAddress.street" cssClass="error"/></td>
                         </tr>
                         <tr>
                             <td>City</td>
                             <td><form:input type="text" path="studentAddress.city"/></td>
+                            <td><form:errors path="studentAddress.city" cssClass="error"/></td>
+
                         </tr>
                         <tr>
                             <td>State</td>
                             <td><form:input type="text" path="studentAddress.state"/></td>
+                            <td><form:errors path="studentAddress.state" cssClass="error"/></td>
                         </tr>
                         <tr>
                             <td>Zip Code</td>
                             <td><form:input type="text" path="studentAddress.zipCode"/></td>
+                            <td><form:errors path="studentAddress.zipCode" cssClass="error"/></td>
                         </tr>
                         <tr>
                             <td> Gender</td>
                         </tr>
                         <tr>
-                            <td><form:radiobutton path="gender" value="M" /> Male</td>
+                            <td><form:radiobutton path="gender" value="M" checked="checked"/> Male</td>
                             <td><form:radiobutton path="gender" value="F"/> Female</td>
                         </tr>
                         <tr>
                             <td><input type="submit" value="Register"></td></tr>
                     </table>
-
-
 
                 </form:form>
 

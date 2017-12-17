@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -24,7 +25,7 @@ import javax.validation.constraints.Size;
 @Table(name = "student")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NotNull
     @NotEmpty
@@ -45,7 +46,6 @@ public class Student {
     @NotNull
     @Embedded
     private Address studentAddress;
-    @NotNull
     @Enumerated(EnumType.STRING)
     private Gender gender;
 

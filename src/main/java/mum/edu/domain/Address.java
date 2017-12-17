@@ -3,14 +3,26 @@
  */
 package mum.edu.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.Embeddable;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Embeddable
 public class Address {
 
+    @NotEmpty
+    @NotNull
     private String street;
+    @NotEmpty
+    @NotNull
     private String city;
+    @NotEmpty
+    @NotNull
     private String state;
+    @NotEmpty
+    @NotNull
     private String zipCode;
 
     public Address() {
