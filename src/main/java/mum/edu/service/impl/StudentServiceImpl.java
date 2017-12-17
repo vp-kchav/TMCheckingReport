@@ -3,6 +3,7 @@ package mum.edu.service.impl;
 import mum.edu.dao.StudentDao;
 import mum.edu.domain.Student;
 import mum.edu.service.StudentService;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ public class StudentServiceImpl implements StudentService {
     StudentDao studentDao;
 
     @Override
+    @Transactional
     public Student save(Student student) {
         return studentDao.save(student);
     }

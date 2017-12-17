@@ -1,5 +1,7 @@
 package mum.edu.domain;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -16,25 +18,31 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "student")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
+    @NotEmpty
     @Column(name = "studentId")
     private String studentId;
+    @NotEmpty
     @NotNull
     @Column(name = "firstName")
     private String firstName;
+    @NotEmpty
     @NotNull
     @Column(name = "lastName")
     private String lastName;
+    @NotEmpty
     @NotNull
     @Column(name = "email")
     private String email;
+    @NotNull
     @Embedded
     private Address studentAddress;
     @NotNull
@@ -115,4 +123,17 @@ public class Student {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", studentId='" + studentId + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", studentAddress=" + studentAddress +
+                ", gender=" + gender +
+                ", _TmCheckings=" + _TmCheckings +
+                '}';
+    }
 }

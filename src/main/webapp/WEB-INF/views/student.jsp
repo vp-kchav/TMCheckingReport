@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
 <%@ page session="true" %>
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css"/>
@@ -20,54 +21,53 @@
     <div class="container">
         <div class="spacer">
             <div class="row">
-                <form action="addStudent" method="post">
-                    <table>
+                <form:form modelAttribute="student" action="studentRegistration" method="post">
+                    <table class="studentregister">
                         <tr>
                             <td>First Name</td>
-                            <td><input type="text" name="firstName"></td>
+                            <td><form:input type="text" path="firstName"/></td>
                         </tr>
                         <tr>
                             <td>Last Name</td>
-                            <td><input type="text" name="lastName"></td>
+                            <td><form:input type="text" path="lastName"/></td>
                         </tr>
                         <tr>
                             <td>Student Id</td>
-                            <td><input type="text" name="studentId"></td>
+                            <td><form:input type="text" path="studentId"/></td>
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td><input type="email" name="email"></td>
+                            <td><form:input type="email" path="email"/></td>
                         </tr>
-
                         <tr>
                             <td>Street</td>
-                            <td><input type="text" name="studentAddress.street"></td>
+                            <td><form:input type="text" path="studentAddress.street"/></td>
                         </tr>
                         <tr>
                             <td>City</td>
-                            <td><input type="text" name="studentAddress.city"></td>
+                            <td><form:input type="text" path="studentAddress.city"/></td>
                         </tr>
                         <tr>
                             <td>State</td>
-                            <td><input type="text" name="studentAddress.state"></td>
+                            <td><form:input type="text" path="studentAddress.state"/></td>
                         </tr>
                         <tr>
                             <td>Zip Code</td>
-                            <td><input type="text" name="studentAddress.zipCode"></td>
-                        </tr>
-
-                        <tr><td>Gender</td></tr>
-                        <tr>
-                            <td><input type="radio" name="gender" value="male" checked> Male</td>
-                            <td><input type="radio" name="gender" value="female"> Female</td>
+                            <td><form:input type="text" path="studentAddress.zipCode"/></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" value="Register"></td>
+                            <td> Gender</td>
                         </tr>
-
+                        <tr>
+                            <td><form:radiobutton path="gender" value="M" /> Male</td>
+                            <td><form:radiobutton path="gender" value="F"/> Female</td>
+                        </tr>
+                        <tr><input type="submit" value="Register"></tr>
                     </table>
 
-                </form>
+
+
+                </form:form>
 
                     <%--<h3><spring:message code="home.about.us" text="test"/></h3>--%>
                 <p>
