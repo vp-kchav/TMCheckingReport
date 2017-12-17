@@ -33,7 +33,7 @@ public class StudentController {
         if (!result.hasErrors()){
             studentService.save(stu);
         }else{
-            view ="studentRegistration";
+            view ="student";
         }
         return view;
     }

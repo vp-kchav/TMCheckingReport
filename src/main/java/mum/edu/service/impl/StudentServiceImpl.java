@@ -13,8 +13,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     @Transactional
-    public long save(Student student) {
-        return studentDao.save(student);
+    public Student save(Student student) {
+        long id = studentDao.save(student);
+        return studentDao.get(id);
     }
 
     @Override

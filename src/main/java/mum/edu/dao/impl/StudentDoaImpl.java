@@ -16,7 +16,7 @@ public class StudentDoaImpl implements StudentDao {
     @Override
     @Transactional
     public long save(Student student) {
-        return (long)sessionFactory.getCurrentSession().save(student);
+        return (long) sessionFactory.getCurrentSession().save(student);
     }
 
     @Override
@@ -27,6 +27,11 @@ public class StudentDoaImpl implements StudentDao {
     @Override
     public Student update(Student student) {
         return (Student) sessionFactory.getCurrentSession().merge(student);
+    }
+
+    @Override
+    public Student get(long id) {
+        return (Student)sessionFactory.getCurrentSession().get(Student.class,id);
     }
 
     public StudentDoaImpl(){
