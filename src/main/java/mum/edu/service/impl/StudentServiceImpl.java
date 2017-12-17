@@ -1,11 +1,12 @@
 package mum.edu.service.impl;
 
+import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
+
 import mum.edu.dao.StudentDao;
 import mum.edu.domain.Student;
 import mum.edu.service.StudentService;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 public class StudentServiceImpl implements StudentService {
 
@@ -24,6 +25,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    @Transactional
     public Student update(Student student) {
         return studentDao.update(student);
     }

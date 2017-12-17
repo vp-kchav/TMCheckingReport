@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.springframework.transaction.annotation.Transactional;
 
 import mum.edu.dao.UserDao;
 import mum.edu.domain.User;
@@ -15,8 +16,9 @@ public class UserDaoImpl implements UserDao{
     
     SessionFactory sessionFactory;
 
-    public User save(User user) {
-        return (User)sessionFactory.getCurrentSession().save(user);
+    @Transactional
+    public long save(User user) {
+        return (long) sessionFactory.getCurrentSession().save(user);
     }
 
     @SuppressWarnings("unchecked")
@@ -26,6 +28,7 @@ public class UserDaoImpl implements UserDao{
         return list;
     }
 
+    @Transactional    
     public User update(User user) {
         return (User) sessionFactory.getCurrentSession().merge(user);
     }

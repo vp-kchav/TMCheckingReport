@@ -5,6 +5,8 @@ package mum.edu.service.impl;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import mum.edu.dao.UserDao;
 import mum.edu.domain.User;
 import mum.edu.service.UserService;
@@ -13,7 +15,8 @@ public class UserServiceImpl implements UserService{
     
     UserDao userDao;
 
-    public User save(User user) {
+    @Transactional
+    public long save(User user) {
         return userDao.save(user);
     }
 
@@ -21,6 +24,7 @@ public class UserServiceImpl implements UserService{
         return userDao.getAll();
     }
 
+    @Transactional
     public User update(User report) {
         return userDao.update(report);
     }

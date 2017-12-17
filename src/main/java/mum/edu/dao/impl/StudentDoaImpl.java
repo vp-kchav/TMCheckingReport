@@ -1,12 +1,12 @@
 package mum.edu.dao.impl;
 
-import mum.edu.dao.StudentDao;
-import mum.edu.domain.Student;
-import org.hibernate.Session;
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import mum.edu.dao.StudentDao;
+import mum.edu.domain.Student;
 
 public class StudentDoaImpl implements StudentDao {
 
@@ -19,12 +19,14 @@ public class StudentDoaImpl implements StudentDao {
         return (long) sessionFactory.getCurrentSession().save(student);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<Student> getAll() {
         return sessionFactory.getCurrentSession().createCriteria(Student.class).list();
     }
 
     @Override
+    @Transactional
     public Student update(Student student) {
         return (Student) sessionFactory.getCurrentSession().merge(student);
     }

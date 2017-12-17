@@ -33,6 +33,16 @@
 		</dependencies>
 	</dependencyManagement>
 	<dependencies>
+		<!--mail dependencies -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<!--mail dependencies end -->
 		<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -139,16 +149,16 @@
 			<version>2.7.3</version>
 		</dependency>
 		<dependency>
-		<groupId>javax.validation</groupId>
-		<artifactId>validation-api</artifactId>
-		<version>1.0.0.GA</version>
-	</dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
 
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-validator</artifactId>
-		<version>4.3.1.Final</version>
-	</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.1.Final</version>
+		</dependency>
 	</dependencies>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
