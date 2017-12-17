@@ -2,7 +2,9 @@ package mum.edu.dao.impl;
 
 import mum.edu.dao.StudentDao;
 import mum.edu.domain.Student;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,8 +14,9 @@ public class StudentDoaImpl implements StudentDao {
 
 
     @Override
-    public Student save(Student student) {
-        return (Student) sessionFactory.getCurrentSession().save(student);
+    @Transactional
+    public long save(Student student) {
+        return (long)sessionFactory.getCurrentSession().save(student);
     }
 
     @Override

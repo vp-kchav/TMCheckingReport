@@ -13,7 +13,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     @Transactional
-    public Student save(Student student) {
+    public long save(Student student) {
         return studentDao.save(student);
     }
 
