@@ -62,7 +62,8 @@
                             <td><form:radiobutton path="gender" value="M" /> Male</td>
                             <td><form:radiobutton path="gender" value="F"/> Female</td>
                         </tr>
-                        <tr><input type="submit" value="Register"></tr>
+                        <tr>
+                            <td><input type="submit" value="Register"></td></tr>
                     </table>
 
 
