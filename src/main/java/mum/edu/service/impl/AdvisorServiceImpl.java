@@ -11,7 +11,7 @@ import mum.edu.domain.Advisor;
 import mum.edu.service.IAdvisorService;
 import mum.edu.service.TMReportService;
 
-//@Service
+//@Service("singleTransactionsService")
 @Transactional (readOnly=true)
 public class AdvisorServiceImpl implements IAdvisorService{
 
