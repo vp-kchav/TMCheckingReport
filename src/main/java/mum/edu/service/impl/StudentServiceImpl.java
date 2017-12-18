@@ -11,7 +11,7 @@ import mum.edu.service.StudentService;
 public class StudentServiceImpl implements StudentService {
 
     StudentDao studentDao;
-
+    
     @Override
     @Transactional
     public Student save(Student student) {
@@ -40,5 +40,11 @@ public class StudentServiceImpl implements StudentService {
 
     public void setStudentDao(StudentDao studentDao) {
         this.studentDao = studentDao;
+    }
+
+    @Override
+    @Transactional
+    public Student getByStudentId(String studentId) {
+        return studentDao.getByStudentId(studentId);
     }
 }

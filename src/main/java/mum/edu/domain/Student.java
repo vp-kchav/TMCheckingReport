@@ -1,7 +1,6 @@
 package mum.edu.domain;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,12 +13,11 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "student")
@@ -49,9 +47,8 @@ public class Student {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "student_id")
-    private List<TMCheckingReport> _TmCheckings;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE, mappedBy= "student")
+    private List<TMCheckingReport> tmCheckings = new ArrayList<TMCheckingReport>();
 
 
     public Student(){
@@ -59,10 +56,10 @@ public class Student {
     }
 
     public List<TMCheckingReport> getTmCheckings() {
-        return _TmCheckings;
+        return tmCheckings;
     }
     public void setTmCheckings(List<TMCheckingReport> tmCheckings) {
-        _TmCheckings = tmCheckings;
+        this.tmCheckings = tmCheckings;
     }
 
 
@@ -121,6 +118,16 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    public void addChecking(TMCheckingReport checking) {
+        tmCheckings.add(checking);
+        checking.setStudent(this);
+    }
+    
+    public void removeSeason(TMCheckingReport checking) {
+        checking.setStudent(null);
+        tmCheckings.remove(checking);
+    }
 
     @Override
     public String toString() {
@@ -132,7 +139,7 @@ public class Student {
                 ", email='" + email + '\'' +
                 ", studentAddress=" + studentAddress +
                 ", gender=" + gender +
-                ", _TmCheckings=" + _TmCheckings +
+                ", _TmCheckings=" + tmCheckings +
                 '}';
     }
 }

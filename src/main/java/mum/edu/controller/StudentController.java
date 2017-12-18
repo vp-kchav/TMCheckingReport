@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import mum.edu.domain.Student;
 import mum.edu.domain.User;
 import mum.edu.service.StudentService;
+import mum.edu.service.TMReportService;
 import mum.edu.service.UserService;
 import mum.edu.utils.StringUtils;
 
@@ -26,11 +27,14 @@ public class StudentController {
     StudentService studentService;
     
     @Autowired
+    TMReportService tmReportService;
+    
+    @Autowired
     UserService userService;
     
     @Autowired
     JavaMailSender sender;
-
+    
     @RequestMapping(value = {"/addStudent"}, method = RequestMethod.GET)
     public ModelAndView studentRegisterForm(@ModelAttribute("student") Student stu, Model model) {
         ModelAndView mav = new ModelAndView();
@@ -50,6 +54,10 @@ public class StudentController {
         return view;
     }
     
+    /**
+     * 
+     * @param student
+     */
     private void manageUserCreation(Student student) {
         User user = new User();
         user.setStudentId(student.getStudentId());
@@ -60,6 +68,10 @@ public class StudentController {
         sendEmail(user);
     }
     
+    /**
+     * 
+     * @param user
+     */
     private void sendEmail(User user) {
         SimpleMailMessage email = new SimpleMailMessage();
         email.setTo(user.getEmail());
