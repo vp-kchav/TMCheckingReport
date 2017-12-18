@@ -47,4 +47,9 @@ public class StudentServiceImpl implements StudentService {
     public Student getByStudentId(String studentId) {
         return studentDao.getByStudentId(studentId);
     }
+
+//    @Override
+//    public List<Student> getCheckedStudents() {
+//        return null; //studentDao.getCheckedStudents();
+//    }
 }

@@ -24,7 +24,7 @@
 				<div class="navbar-collapse  collapse">
 					<ul id="mainMenu" class="nav navbar-nav navbar-right">
 						<li><a href="<c:url value="/index"/>"><spring:message code="menu.home" text="Home"/></a></li>
-<%-- 						<li><a href="addStudent"><spring:message code="menu.login" text="add student"/></a></li> --%>
+ 						<li><a href="addStudent"><spring:message code="menu.login" text="add student"/></a></li>
 						<li><a href="addAdvisor"><spring:message code="menu.login" text="add advisor"/></a></li>
 						<li><a href="requestChecking"><spring:message code="menu.request.checking" text="request TM Checking"/></a></li>
 						<li><a href="listChecking"><spring:message code="menu.List.checking" text="List Checking"/></a></li>

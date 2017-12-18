@@ -20,6 +20,8 @@ import mum.edu.service.TMReportService;
 import mum.edu.service.UserService;
 import mum.edu.utils.StringUtils;
 
+import java.util.List;
+
 @Controller
 public class StudentController {
     
@@ -52,6 +54,13 @@ public class StudentController {
             view ="student";
         }
         return view;
+    }
+
+    @RequestMapping(value = {"/listStudents"}, method = RequestMethod.GET)
+    public ModelAndView listStudent(Model model){
+//        List<Student> studentList = studentService.getCheckedStudents();
+//        System.out.println(studentList);
+        return null;
     }
     
     /**

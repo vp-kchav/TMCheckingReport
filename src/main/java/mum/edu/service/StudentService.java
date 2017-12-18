@@ -13,4 +13,6 @@ public interface StudentService {
     Student update(Student student);
 
     Student getByStudentId(String studentId);
+
+    //List<Student> getCheckedStudents();
 }

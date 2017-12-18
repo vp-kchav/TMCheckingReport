@@ -45,7 +45,15 @@ public class StudentDoaImpl implements StudentDao {
         query.setParameter("studentId", studentId);
         return (Student)query.uniqueResult();
     }
-    
+
+//    @Override
+//    @Transactional
+//    public List<Student> getCheckedStudents() {
+////        Session session = sessionFactory.getCurrentSession();
+////        Query query = session.createQuery("SELECT s FROM Student s JOIN FETCH TMCheckingReport r where s.studentId =  r.student AND r.status = 'APPROVE'");
+//        return null; //(List<Student>) query.list();
+//    }
+
     public StudentDoaImpl(){
 
     }
