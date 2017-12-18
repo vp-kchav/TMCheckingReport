@@ -168,3 +168,6 @@ h2{font-size: 25px;}
 table{
 	color:#555;	font:normal 13px/22px Arial;	background:url(../images/bgmain.png) #eee;
 }
+.studentregister tr input{
+	margin-top: 20px;
+}

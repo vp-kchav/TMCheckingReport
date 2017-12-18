@@ -48,10 +48,12 @@
 	</bean>
 
 	<bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basenames" value="errorMessages,messages" />
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="errorMessages" />
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
+
+
 
 	<bean id="messageAccessor"
 		class="org.springframework.context.support.MessageSourceAccessor">

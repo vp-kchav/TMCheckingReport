@@ -1,8 +1,8 @@
 package mum.edu.service;
 
-import mum.edu.domain.Student;
-
 import java.util.List;
+
+import mum.edu.domain.Student;
 
 public interface StudentService {
 
@@ -12,5 +12,5 @@ public interface StudentService {
 
     Student update(Student student);
 
-
+    Student getByStudentId(String studentId);
 }

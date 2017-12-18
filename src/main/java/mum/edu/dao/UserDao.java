@@ -9,7 +9,7 @@ import mum.edu.domain.User;
 
 public interface UserDao {
     
-    User save(User user);
+    long save(User user);
     
     List<User> getAll();
     

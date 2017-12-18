@@ -1,15 +1,20 @@
 package mum.edu.dao;
 
-import mum.edu.domain.Student;
-
 import java.util.List;
+
+import mum.edu.domain.Student;
 
 public interface StudentDao {
 
 
-    Student save(Student student);
+    long save(Student student);
 
     List<Student> getAll();
 
     Student update(Student student);
+
+    Student get(long id);
+    
+    Student getByStudentId(String studentId);
+
 }

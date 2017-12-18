@@ -42,6 +42,9 @@
 								<li><a href="login"><spring:message code="menu.login" text="Log In"/></a></li>
 								<li><a href="addStudent"><spring:message code="menu.login" text="add student"/></a></li>
 								<li><a href="addAdvisor"><spring:message code="menu.login" text="add advisor"/></a></li>
+								<li><a href="requestChecking"><spring:message code="menu.request.checking" text="request TM Checking"/></a></li>
+								<li><a href="listChecking"><spring:message code="menu.List.checking" text="List Checking"/></a></li>
+								<li><a href="listPendingChecking"><spring:message code="menu.List.checking" text="Pending List"/></a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>

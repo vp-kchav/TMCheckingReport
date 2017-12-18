@@ -9,9 +9,15 @@ import mum.edu.domain.TMCheckingReport;
 
 public interface TMReportDao {
     
+    TMCheckingReport getById(Long id);
+    
     TMCheckingReport save(TMCheckingReport report);
     
     List<TMCheckingReport> getAll();
     
     TMCheckingReport update(TMCheckingReport report);
+    
+    List<TMCheckingReport> getByStudentId(String studentId);
+    
+    List<TMCheckingReport> getPedingList();
 }

@@ -1,18 +1,22 @@
 package mum.edu.service.impl;
 
+import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
+
 import mum.edu.dao.StudentDao;
 import mum.edu.domain.Student;
 import mum.edu.service.StudentService;
 
-import java.util.List;
-
 public class StudentServiceImpl implements StudentService {
 
     StudentDao studentDao;
-
+    
     @Override
+    @Transactional
     public Student save(Student student) {
-        return studentDao.save(student);
+        long id = studentDao.save(student);
+        return studentDao.get(id);
     }
 
     @Override
@@ -21,6 +25,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    @Transactional
     public Student update(Student student) {
         return studentDao.update(student);
     }
@@ -35,5 +40,11 @@ public class StudentServiceImpl implements StudentService {
 
     public void setStudentDao(StudentDao studentDao) {
         this.studentDao = studentDao;
+    }
+
+    @Override
+    @Transactional
+    public Student getByStudentId(String studentId) {
+        return studentDao.getByStudentId(studentId);
     }
 }
