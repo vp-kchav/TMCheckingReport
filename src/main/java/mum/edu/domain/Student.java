@@ -25,7 +25,8 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotNull
+    
+    @NotNull(message= "{student.studentID.notnull}")
     @NotEmpty
     @Column(name = "studentId")
     private String studentId;
@@ -34,7 +35,7 @@ public class Student {
     @Column(name = "firstName")
     private String firstName;
     @NotEmpty
-    @NotNull
+    @NotNull(message = "{}")
     @Column(name = "lastName")
     private String lastName;
     @NotEmpty
