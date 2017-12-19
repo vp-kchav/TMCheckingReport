@@ -73,11 +73,11 @@ public class AdvisorController {
 	}
 	
 	@RequestMapping(value = {"/advisors"}, method = RequestMethod.POST)
-    public String saveAdvisor(@ModelAttribute("advisor") @Valid Advisor advisor, BindingResult result, Model model) throws Exception{
+    public String saveAdvisor(@ModelAttribute("advisor") @Valid Advisor advisor, BindingResult result, Model model) {
         String view = "redirect:/advisorlist";
-        if(result.hasErrors()) {
-        	throw new Exception(result.getFieldError().getDefaultMessage());
-        }
+//        if(result.hasErrors()) {
+//        	throw new Exception(result.getFieldError().getDefaultMessage());
+//        }
         if (!result.hasErrors()){
         	advisorservice.addAdvisor(advisor);
             //createLoginAccount(advisor);
