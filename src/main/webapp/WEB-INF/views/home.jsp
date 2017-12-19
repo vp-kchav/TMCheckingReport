@@ -20,10 +20,6 @@
 			<div class="container">
 				<div class="spacer">
 					<div class="row">
-						<h3><spring:message code="home.about.us" text="test"/></h3>
-						<p>
-						</p>
-
 					</div>
 				</div>
 			</div>
