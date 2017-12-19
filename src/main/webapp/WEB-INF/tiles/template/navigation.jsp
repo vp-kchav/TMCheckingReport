@@ -26,12 +26,14 @@
 						<li><a href="<c:url value="/index"/>"><spring:message code="menu.home" text="Home"/></a></li>
  						<li><a href="addStudent"><spring:message code="menu.login" text="add student"/></a></li>
 						<li><a href="addAdvisor"><spring:message code="menu.login" text="add advisor"/></a></li>
-						<li><a href="requestChecking"><spring:message code="menu.request.checking" text="request TM Checking"/></a></li>
-						<li><a href="listChecking"><spring:message code="menu.List.checking" text="List Checking"/></a></li>
-<%-- 						<sec:authorize access ="hasRole('ROLE_ADMIN')"> --%>
+						<sec:authorize access ="hasRole('ROLE_USER')">
+							<li><a href="requestChecking"><spring:message code="menu.request.checking" text="request TM Checking"/></a></li>
+							<li><a href="listChecking"><spring:message code="menu.List.checking" text="List Checking"/></a></li>
+						</sec:authorize>
+						<sec:authorize access ="hasRole('ROLE_ADMIN')">
 							<li><a href="listPendingChecking"><spring:message code="menu.List.checking" text="Pending List"/></a></li>
-<%-- 						</sec:authorize> --%>
-						<li><a href="listStudents"><spring:message code="menu.List.student" text="Students List"/></a></li>
+							<li><a href="listStudents"><spring:message code="menu.List.student" text="Students List"/></a></li>
+						</sec:authorize>
 						<c:choose>
 							<c:when test="${sessionScope.currentUser != null}">
 								<li>

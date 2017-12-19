@@ -21,6 +21,12 @@
        	<access-denied-handler error-page="/403" />
        	
 		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/addStudent" access="permitAll" />
+		<intercept-url pattern="/addAdvisor" access="permitAll" />
+		<intercept-url pattern="/requestChecking" access="isAuthenticated()" />
+		<intercept-url pattern="/listChecking" access="isAuthenticated()" />
+		<intercept-url pattern="/listPendingChecking" access="isAuthenticated()" />
+		<intercept-url pattern="/listStudents" access="isAuthenticated()" />
 <!-- 		<intercept-url pattern ="/student/listChecking" access="hasRle('ROLE_ACE')" /> -->
 <!-- 		<intercept-url pattern="/" access="permitAll" /> -->
         <form-login login-page="/login" username-parameter="studentId"

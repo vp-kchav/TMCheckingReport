@@ -75,12 +75,9 @@ public class AdvisorController {
 	@RequestMapping(value = {"/advisors"}, method = RequestMethod.POST)
     public String saveAdvisor(@ModelAttribute("advisor") @Valid Advisor advisor, BindingResult result, Model model) {
         String view = "redirect:/advisorlist";
-//        if(result.hasErrors()) {
-//        	throw new Exception(result.getFieldError().getDefaultMessage());
-//        }
         if (!result.hasErrors()){
         	advisorservice.addAdvisor(advisor);
-            //createLoginAccount(advisor);
+            createLoginAccount(advisor);
         }else{
             view ="addAdvisor";
         }
@@ -105,63 +102,4 @@ public class AdvisorController {
 	        emailsender.send(email);
 	    }
 
-//	 public synchronized static boolean sendMailAdvance(String emailTo, String subject, String body)
-//	 {
-//	 String host = AppConfigManager.getProperty("SENDER-EMAIL-SMTP-ADDRESS");
-//	 String userName = AppConfigManager.getProperty("SENDER-EMAIL-SMTP-USERNAME");
-//	 String password = AppConfigManager.getProperty("SENDER-EMAIL-SMTP-PASSWORD");
-//	 String port = AppConfigManager.getProperty("SENDER-EMAIL-SMTP-PORT");
-//	 String starttls = AppConfigManager.getProperty("SENDER-EMAIL-SMTP-STARTTLS");
-//	 String socketFactoryClass = AppConfigManager.getProperty("SENDER-EMAIL-SMTP-SOCKET-CLASS");
-//	 String fallback = AppConfigManager.getProperty("SENDER-EMAIL-SMTP-ALLOW-FALLBACK");                         
-//
-//	         try
-//	         {
-//	             java.util.Properties props = null;
-//	             props = System.getProperties();
-//	             props.put("mail.smtp.user", userName);
-//	             props.put("mail.smtp.host", host);
-//	             props.put("mail.smtp.auth", "true");
-//	             props.put("mail.smtp.debug", "true");
-//
-//	             if(!"".equals(port))
-//	             {
-//	                 props.put("mail.smtp.port", port);
-//	                 props.put("mail.smtp.socketFactory.port", port);
-//	             }
-//
-//	             if(!"".equals(starttls))
-//	                 props.put("mail.smtp.starttls.enable",starttls);
-//
-//	             if(!"".equals(socketFactoryClass))
-//	                 props.put("mail.smtp.socketFactory.class",socketFactoryClass);
-//
-//	             if(!"".equals(fallback))
-//	                 props.put("mail.smtp.socketFactory.fallback", fallback);
-//
-//	             Session session = Session.getDefaultInstance(props, null);
-//	             session.setDebug(true);
-//
-//	             MimeMessage msg = new MimeMessage(session);
-//	             msg.setFrom(new InternetAddress(userName));
-//	             msg.setSubject(subject);                
-//	             msg.setText(body, "ISO-8859-1");
-//	             msg.setSentDate(new Date());
-//	             msg.setHeader("content-Type", "text/html;charset=\"ISO-8859-1\"");
-//	             msg.addRecipient(Message.RecipientType.TO, new InternetAddress(emailTo));
-//	             msg.saveChanges();
-//
-//	             Transport transport = session.getTransport("smtp");
-//	             transport.connect(host, userName, password);
-//	             transport.sendMessage(msg, msg.getAllRecipients());
-//	             transport.close();
-//
-//	             return true;
-//	         }
-//	         catch (Exception mex)
-//	         {
-//	             mex.printStackTrace();
-//	             return false;
-//	         }
-//	 }
 }

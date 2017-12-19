@@ -38,7 +38,7 @@
 								<td>Gender:</td>
 								<td><input type="text" name="color" value="${advisor.gender}" /> </td>
 								<td>
-								<form:select path="genderList" multiple="false" size="1">
+								<form:select path="advisor.gender" multiple="false" size="1">
 								<form:options items="${genderList}" itemValue="gender" itemLabel="gender"/>
 								</form:select>
 								
