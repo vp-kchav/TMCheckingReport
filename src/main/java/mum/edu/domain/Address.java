@@ -12,16 +12,16 @@ import javax.validation.constraints.NotNull;
 @Embeddable
 public class Address {
 
-    @NotEmpty
+    @NotEmpty(message = "NotEmpty.studentAddress.street")
     @NotNull
     private String street;
-    @NotEmpty
+    @NotEmpty(message = "NotEmpty.studentAddress.city")
     @NotNull
     private String city;
-    @NotEmpty
+    @NotEmpty(message = "NotEmpty.studentAddress.state")
     @NotNull
     private String state;
-    @NotEmpty
+    @NotEmpty(message = "NotEmpty.studentAddress.zipCode")
     @NotNull
     private String zipCode;
 

@@ -26,19 +26,19 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @NotNull(message= "{student.studentID.notnull}")
-    @NotEmpty
+    @NotNull()
+    @NotEmpty(message= "NotEmpty.student.studentId")
     @Column(name = "studentId")
     private String studentId;
-    @NotEmpty
+    @NotEmpty(message = "NotEmpty.student.firstName")
     @NotNull
     @Column(name = "firstName")
     private String firstName;
-    @NotEmpty
-    @NotNull(message = "{}")
+    @NotEmpty(message = "NotEmpty.student.lastName")
+    @NotNull
     @Column(name = "lastName")
     private String lastName;
-    @NotEmpty
+    @NotEmpty(message = "NotEmpty.student.email")
     @NotNull
     @Column(name = "email")
     private String email;
