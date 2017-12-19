@@ -14,5 +14,5 @@ public interface StudentService {
 
     Student getByStudentId(String studentId);
 
-    //List<Student> getCheckedStudents();
+    List<Student> findByStudentId(String studentId);
 }

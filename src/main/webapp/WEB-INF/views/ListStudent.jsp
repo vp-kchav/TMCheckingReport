@@ -17,23 +17,28 @@
 		<div class="spacer">
 			<div class="row register">
 				<div class="col-lg-12 col-sm-12 col-xs-12 ">
-
+					<form action="searchStudent" method="post">
+						<input type="text" id = "sid" name = "studentId" />
+						<input type="submit" value="Search"> 
+					</form>
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<tr class="active">
-								<th><spring:message code="checking.studentID"   text="Student ID" /></th>
-								<th><spring:message code="checking.name"   text="Name" /></th>
-								<th><spring:message code="checking.date"   text="Date" /></th>
-								<th><spring:message code="checking.status"   text="Status" /></th>
+								<th><spring:message code="student.id"   text="Student ID" /></th>
+								<th><spring:message code="student.name"   text="Name" /></th>
+								<th><spring:message code="student.email"   text="Email" /></th>
+								<th><spring:message code="student.gender"   text="Gender" /></th>
+								<th><spring:message code="student.checked"   text="TM Checked" /></th>
 								<th></th>
 								<th></th>
 							</tr>
-							<c:forEach var="checking" items="${reports}">
+							<c:forEach var="student" items="${students}">
 								<tr class="active approw">
-									<td>${checking.student.studentId}</td>
-									<td>${checking.student.firstName}  ${checking.student.lastName} </td>
-									<td>${checking.checkingDate}</td>
-									<td>${checking.status}</td>
+									<td>${student.studentId}</td>
+									<td>${student.firstName}  ${student.lastName} </td>
+									<td>${student.email}</td>
+									<td>${student.gender}</td>
+									<td>${student.getNumberTmChecked()}</td>
 <%-- 									<td><a href="<c:url value="/property/propertyList?id=${hotProperty.id}"/>">View</a></td> --%>
 <%-- 									 <td><a href="#" class="approveRequestBtn" valId="${hotProperty.id}" >Approve</a></td> --%>
 								</tr>

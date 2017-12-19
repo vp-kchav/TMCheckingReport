@@ -20,6 +20,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    @Transactional
     public List<Student> getAll() {
         return studentDao.getAll();
     }
@@ -48,6 +49,11 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.getByStudentId(studentId);
     }
 
+    @Transactional
+    public List<Student> findByStudentId(String studentId) {
+        return studentDao.findByStudentId(studentId);
+    }
+    
 //    @Override
 //    public List<Student> getCheckedStudents() {
 //        return null; //studentDao.getCheckedStudents();

@@ -3,7 +3,6 @@ package mum.edu.dao;
 import java.util.List;
 
 import mum.edu.domain.Student;
-import mum.edu.domain.TMCheckingReport;
 
 public interface StudentDao {
 
@@ -18,6 +17,6 @@ public interface StudentDao {
     
     Student getByStudentId(String studentId);
 
-    //List<Student> getCheckedStudents();
+    List<Student> findByStudentId(String studentId);
 
 }

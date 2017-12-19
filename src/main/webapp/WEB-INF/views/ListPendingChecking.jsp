@@ -24,7 +24,7 @@
 								<th><spring:message code="checking.studentID"   text="Student ID" /></th>
 								<th><spring:message code="checking.name"   text="Name" /></th>
 								<th><spring:message code="checking.date"   text="Date" /></th>
-								<th><spring:message code="checking.status"   text="Status" /></th>
+								<th><spring:message code="checking.action"   text="Action" /></th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -33,9 +33,7 @@
 									<td>${checking.student.studentId}</td>
 									<td>${checking.student.firstName}  ${checking.student.lastName} </td>
 									<td>${checking.checkingDate}</td>
-									<td><a href="approve?id=${checking.id}">Approve</a></td>
-<%-- 									<td><a href="<c:url value="/property/propertyList?id=${hotProperty.id}"/>">View</a></td> --%>
-<%-- 									 <td><a href="#" class="approveRequestBtn" valId="${hotProperty.id}" >Approve</a></td> --%>
+									<td><a href="approve?id=${checking.id}&status=Approve">Approve</a> | <a href="approve?id=${checking.id}&status=Done">Done</td>
 								</tr>
 							</c:forEach>
 						</table>

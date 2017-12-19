@@ -23,7 +23,9 @@ public class StudentDoaImpl implements StudentDao {
     @SuppressWarnings("unchecked")
     @Override
     public List<Student> getAll() {
-        return sessionFactory.getCurrentSession().createCriteria(Student.class).list();
+        Session session = sessionFactory.getCurrentSession();
+        Query query =  session.createQuery("SELECT Distinct s FROM Student s");
+        return query.list();
     }
 
     @Override
@@ -46,14 +48,14 @@ public class StudentDoaImpl implements StudentDao {
         return (Student)query.uniqueResult();
     }
 
-//    @Override
-//    @Transactional
-//    public List<Student> getCheckedStudents() {
-////        Session session = sessionFactory.getCurrentSession();
-////        Query query = session.createQuery("SELECT s FROM Student s JOIN FETCH TMCheckingReport r where s.studentId =  r.student AND r.status = 'APPROVE'");
-//        return null; //(List<Student>) query.list();
-//    }
-
+    @SuppressWarnings("unchecked")
+    public List<Student> findByStudentId(String studentId) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query =  session.createQuery("SELECT s FROM Student s where studentId like :studentId");
+        query.setParameter("studentId", "%"+studentId+"%");
+        return query.list();
+    }
+    
     public StudentDoaImpl(){
 
     }

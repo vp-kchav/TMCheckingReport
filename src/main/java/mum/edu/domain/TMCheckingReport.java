@@ -15,7 +15,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -88,18 +87,5 @@ public class TMCheckingReport {
         this.checkingDate = checkingDate;
         this.status = status;
     }
-    
-    @Transient
-    private String test;
-
-    
-    public String getTest() {
-        return test;
-    }
-
-    
-    public void setTest(String test) {
-        this.test = test;
-    }
-    
+        
 }

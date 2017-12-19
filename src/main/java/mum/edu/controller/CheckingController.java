@@ -39,9 +39,13 @@ public class CheckingController {
     }
     
     @RequestMapping(value = "/approve", method = RequestMethod.GET)
-    public String appointmentApprove(@RequestParam("id") Long id) {
+    public String appointmentApprove(@RequestParam("id") Long id, @RequestParam("status") String status) {
         TMCheckingReport report = tmReportService.getById(id);
-        report.setStatus(CheckingStatus.APPROVE);
+        if(status.equalsIgnoreCase("Approve")) {
+            report.setStatus(CheckingStatus.APPROVE);
+        }else if(status.equalsIgnoreCase("Done")) {
+            report.setStatus(CheckingStatus.DONE);
+        }
         tmReportService.update(report);
         return "redirect:/listPendingChecking";
 

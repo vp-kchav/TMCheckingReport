@@ -130,6 +130,16 @@ public class Student {
         tmCheckings.remove(checking);
     }
 
+    public int getNumberTmChecked() {
+        int count=0;
+        for(TMCheckingReport report : tmCheckings) {
+            if(report.getStatus().equals(CheckingStatus.DONE)) {
+                count++;
+            }
+        }
+        return count;
+    }
+    
     @Override
     public String toString() {
         return "Student{" +

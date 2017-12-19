@@ -1,5 +1,7 @@
 package mum.edu.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +21,6 @@ import mum.edu.service.StudentService;
 import mum.edu.service.TMReportService;
 import mum.edu.service.UserService;
 import mum.edu.utils.StringUtils;
-
-import java.util.List;
 
 @Controller
 public class StudentController {
@@ -57,10 +57,16 @@ public class StudentController {
     }
 
     @RequestMapping(value = {"/listStudents"}, method = RequestMethod.GET)
-    public ModelAndView listStudent(Model model){
-//        List<Student> studentList = studentService.getCheckedStudents();
-//        System.out.println(studentList);
-        return null;
+    public String listStudent(Model model){
+        List<Student> studentList = studentService.getAll();
+        model.addAttribute("students", studentList);
+        return "ListStudent";
+    }
+    @RequestMapping(value = "/searchStudent", method = RequestMethod.POST)
+    public String searchStudent(@ModelAttribute("student") Student student,Model model) {
+        List<Student> studentList = studentService.findByStudentId(student.getStudentId());
+        model.addAttribute("students", studentList);
+        return "ListStudent";
     }
     
     /**

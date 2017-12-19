@@ -33,9 +33,6 @@
 													placeholder="MM/dd/yyyy HH:mm" path="checkingDate"
 													required="required" pattern="yyyy-MM-dd'T'HH:mm:ss.SSS"  />
 									</td>
-									<td>
-										<form:input path="test" />
-									</td>
 <!-- 									<td> -->
 <%-- 										<form:errors path="checkingDate" cssClass="error" /> --%>
 <!-- 									</td> -->
