@@ -19,25 +19,26 @@
 				<div class="container">
 					<div class="spacer">
 						<div class="row">
+						     <h3>Add new Advisor</h3>
 							<form:form modelAttribute="advisor" action="advisors" method="post">
 								<form:errors path="*" cssClass="errorblock" element="div" />
-								<table>
-									<tr>
+								<table class="table table-hover" >
+									<tr class="active">
 									    <td>Advisor ID:</td>
 									    <td><form:input type="text" path="advisorid" /></td>
 									    <td><form:errors path="advisorid" cssClass="error"/></td>
 							       </tr>
-							       <tr>
+							       <tr class="active approw">
 									    <td>First Name:</td>
 									    <td><form:input type="text" path="firstname" /></td>
 									    <td><form:errors path="firstname"  cssClass="error"/></td>
 									</tr>
-									<tr>
+									<tr class="active approw">
 									    <td>Last Name:</td>
 									    <td><form:input type="text" path="lastname" /></td>
 									    <td><form:errors path="lastname" cssClass="error"/></td>
 									</tr>
-									<tr>
+									<tr class="active approw">
 										 <td>Gender:</td>
 										<td>    
 										<select name="gender">
@@ -53,34 +54,34 @@
 										</form:select>
 									  </td> --%>
 									</tr>
-									<tr>
+									<tr class="active approw">
 									    <td>Email:</td>
 									    <td><form:input type="text" path="email"/></td>
 									    <td><form:errors path="email" cssClass="error"/></td>
 									</tr>
 									
-									<tr>
+									<tr class="active approw">
 										<td>Street:</td>
 										<td><form:input type="text" path="address.street"/></td>
 										<td><form:errors path="address.street" cssClass="error"/></td>
 									</tr>
-									<tr>
+									<tr class="active approw">
 										<td>City:</td>
 										<td><form:input type="text" path="address.city"/></td>
 										<td><form:errors path="address.city" cssClass="error"/></td>
 									</tr>
-									<tr>
+									<tr class="active approw">
 										<td>State:</td>
 										<td><form:input type="text" path="address.state"/></td>
 										<td><form:errors path="address.state" cssClass="error"/></td>
 									</tr>
-									<tr>
+									<tr class="active approw">
 										<td>zipCode:</td>
 										<td><form:input type="text" path="address.zipCode"/></td>
 										<td><form:errors path="address.zipCode" cssClass="error"/></td>
 									</tr>
 								</table>
-								<input type=submit value="Add Advisor">
+								<p align=center><input type=submit value="Add Advisor"></p>
 							</form:form>
 					   </div>
 					</div>

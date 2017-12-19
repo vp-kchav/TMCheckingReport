@@ -18,55 +18,56 @@
 			<div class="container">
 				<div class="spacer">
 					<div class="row">
-	<form action="../advisordetail/${advisor.id}" method="post">
-	<table>
-		<tr>
-			<td>Advisor ID:</td>
-			<td><input type="text" name="advisorid" value="${advisor.advisorid}" />
-			</td>
-		</tr>
-		<tr>
-			<td>First Name:</td>
-			<td><input type="text" name="firstname" value="${advisor.firstname}" /> </td>
-		</tr>
-		<tr>
-			<td>Last Name:</td>
-			<td><input type="text" name="lastname" value="${advisor.lastname}" /> </td>
-		</tr>
-		<%-- <tr>
-			<td>Gender:</td>
-			<td><input type="text" name="color" value="${advisor.gender}" /> </td>
-			<td>
-			<form:select path="genderList" multiple="false" size="1">
-			<form:options items="${genderList}" itemValue="gender" itemLabel="gender"/>
-			</form:select>
-			
-			</td>
-		</tr> --%>
-		<tr>
-			<td>Email:</td>
-			<td><input type="text" name="email" value="${advisor.email}" /> </td>
-		</tr>
-		<tr>
-			<td>Street:</td>
-			<td><input type="text" name="address.street" value="${advisor.address.street}" /> </td>
-		</tr>
-		<tr>
-			<td>City:</td>
-			<td><input type="text" name="address.city" value="${advisor.address.city}" /> </td>
-		</tr>
-		<tr>
-			<td>State:</td>
-			<td><input type="text" name="address.state" value="${advisor.address.state}" /> </td>
-		</tr>
-		<tr>
-			<td>Zip Code:</td>
-			<td><input type="text" name="address.zipCode" value="${advisor.address.zipCode}" /> </td>
-		</tr>
-	</table>
-	<input type="submit" value="Update"/>
-	</form>
-</div>
+						<h3>Update Advisor</h3>
+						<form action="../advisordetail/${advisor.id}" method="post">
+						<table class="table table-hover">
+							<tr>
+								<td>Advisor ID:</td>
+								<td><input type="text" name="advisorid" value="${advisor.advisorid}" />
+								</td>
+							</tr>
+							<tr>
+								<td>First Name:</td>
+								<td><input type="text" name="firstname" value="${advisor.firstname}" /> </td>
+							</tr>
+							<tr>
+								<td>Last Name:</td>
+								<td><input type="text" name="lastname" value="${advisor.lastname}" /> </td>
+							</tr>
+							<%-- <tr>
+								<td>Gender:</td>
+								<td><input type="text" name="color" value="${advisor.gender}" /> </td>
+								<td>
+								<form:select path="genderList" multiple="false" size="1">
+								<form:options items="${genderList}" itemValue="gender" itemLabel="gender"/>
+								</form:select>
+								
+								</td>
+							</tr> --%>
+							<tr>
+								<td>Email:</td>
+								<td><input type="text" name="email" value="${advisor.email}" /> </td>
+							</tr>
+							<tr>
+								<td>Street:</td>
+								<td><input type="text" name="address.street" value="${advisor.address.street}" /> </td>
+							</tr>
+							<tr>
+								<td>City:</td>
+								<td><input type="text" name="address.city" value="${advisor.address.city}" /> </td>
+							</tr>
+							<tr>
+								<td>State:</td>
+								<td><input type="text" name="address.state" value="${advisor.address.state}" /> </td>
+							</tr>
+							<tr>
+								<td>Zip Code:</td>
+								<td><input type="text" name="address.zipCode" value="${advisor.address.zipCode}" /> </td>
+							</tr>
+						</table>
+						<p align=center><input type="submit" value="Update"/></p>
+						</form>
+					</div>
 				</div>
 			</div>
 	</tiles:putAttribute>

@@ -17,7 +17,8 @@
 	<tiles:putAttribute name="body">
 			<div class="container">
 				<div class="spacer">
-					<div class="row">					   
+					<div class="row">
+					     <h3>Advisor list</h3>					   
 					     <table class="table table-hover" >
 					    <tr class="active">
 					        <th>Advisor ID</th>
@@ -35,7 +36,7 @@
 							<td>${advisor.advisorid}</td>
 					    	<td>${advisor.firstname}</td>
 					        <td>${advisor.lastname}</td>
-					       <%--  <td>${advisor.gender}</td>--%>
+					        <td>${advisor.gender}</td>
 					    	<td>${advisor.email}</td>
 					        <td>${advisor.address.street}</td> 
 					        <td>${advisor.address.city}</td>
