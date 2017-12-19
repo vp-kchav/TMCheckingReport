@@ -88,7 +88,7 @@ public class AdvisorController {
 	        User user = new User();
 	        user.setStudentId(advisor.getAdvisorid());
 	        user.setEmail(advisor.getEmail());
-	        user.setRole(StringUtils.ROLE_USER);
+	        user.setRole(StringUtils.ROLE_ADMIN);
 	        user.setPassword(StringUtils.generateRandomPassword());
 	        userservice.save(user);
 	        sendEmail(user);
