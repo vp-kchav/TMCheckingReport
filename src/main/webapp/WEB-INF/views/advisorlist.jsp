@@ -18,8 +18,8 @@
 			<div class="container">
 				<div class="spacer">
 					<div class="row">					   
-					     <table class="table" >
-					    <tr>
+					     <table class="table table-hover" >
+					    <tr class="active">
 					        <th>Advisor ID</th>
 					        <th>First Name</th>
 					        <th>Last Name</th>
@@ -31,7 +31,7 @@
 					        <th>Zip Code</th>
 					    </tr>
 					<c:forEach var="advisor" items="${advisorlist}">
-					    <tr>
+					    <tr class="active approw">
 							<td>${advisor.advisorid}</td>
 					    	<td>${advisor.firstname}</td>
 					        <td>${advisor.lastname}</td>

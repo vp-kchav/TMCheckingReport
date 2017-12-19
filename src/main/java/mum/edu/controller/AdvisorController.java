@@ -51,13 +51,6 @@ public class AdvisorController {
 		return "advisordetail";
 	}
 	
-//	@RequestMapping(value="/advisordetail/{id}")
-//	public ModelAndView getAdvisor(@PathVariable long id){
-//		
-//		Advisor advisor=advisorservice.getAdvisor(id);
-//		return new ModelAndView("advisordetail","command",advisor);
-//	}
-	
 	@RequestMapping(value="/advisordetail/{id}",method=RequestMethod.POST)
 	 public String updateAdvisor(@ModelAttribute("advisor") @Valid Advisor advisor, BindingResult result, Model model,@PathVariable int id) throws Exception{
         String view = "redirect:/advisorlist";
@@ -72,35 +65,12 @@ public class AdvisorController {
         }
         return view;
     }
-	
-//	@RequestMapping(value="/cars/{id}", method=RequestMethod.POST)
-//	public String update(Car car, @PathVariable int id) {
-//		carDao.update(id, car); // car.id already set by binding
-//		return "redirect:/cars";
-//	}
-	
+		
 	@RequestMapping(value="/deleteadvisor/{id}",method=RequestMethod.GET)
 	public String deleteAdvisor(@PathVariable long id) {
 		advisorservice.deleteAdvisor(id);
 		return "redirect:/advisorlist";
 	}
-	
-//	@RequestMapping(value="/advisors", method=RequestMethod.POST)
-//	public String saveAdvisor(Advisor advisor) {
-//		
-//			//advisor.setGender(Enum.valueOf(Gender.class, gender));
-//		   advisorservice.addAdvisor(advisor);
-//			return "redirect:/advisors";
-//			
-//		}
-//	@RequestMapping(value="/advisors",method=RequestMethod.POST)
-//	public String saveAdvisor(Advisor advisor,Model model)
-//	{
-//		List<Gender> enums = Arrays.asList(Gender.values());
-//		model.addAttribute("myEnumValueList", enums);
-//		advisorservice.addAdvisor(advisor);
-//		return "redirect:/advisors";
-//	}
 	
 	@RequestMapping(value = {"/advisors"}, method = RequestMethod.POST)
     public String saveAdvisor(@ModelAttribute("advisor") @Valid Advisor advisor, BindingResult result, Model model) throws Exception{
