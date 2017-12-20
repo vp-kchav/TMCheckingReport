@@ -1,5 +1,6 @@
 package mum.edu.domain;
 
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -35,11 +36,13 @@ public class Advisor {
 	@Length(min=2,max=10)
 	@Column(name="advisorid")
 	private String advisorid;
-    @NotNull
+	
     @Embedded
     private Address address;
+    
     @Enumerated(EnumType.STRING)
     private Gender gender;
+    @NotEmpty
     @Email
     private String email;
     

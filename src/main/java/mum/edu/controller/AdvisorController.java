@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import mum.edu.domain.Advisor;
+import mum.edu.domain.Gender;
 import mum.edu.domain.User;
 import mum.edu.service.IAdvisorService;
 import mum.edu.service.UserService;
@@ -47,16 +48,14 @@ public class AdvisorController {
 	}
 	@RequestMapping(value="/advisordetail/{id}",method=RequestMethod.GET)
 	public String getAdvisor(@PathVariable long id, Model model) {
+		//model.addAttribute("genders", Gender.values());
 		model.addAttribute("advisor",advisorservice.getAdvisor(id) );
 		return "advisordetail";
 	}
 	
 	@RequestMapping(value="/advisordetail/{id}",method=RequestMethod.POST)
-	 public String updateAdvisor(@ModelAttribute("advisor") @Valid Advisor advisor, BindingResult result, Model model,@PathVariable int id) throws Exception{
+	 public String updateAdvisor(@ModelAttribute("advisor") @Valid Advisor advisor, BindingResult result, Model model,@PathVariable int id) {
         String view = "redirect:/advisorlist";
-        if(result.hasErrors()) {
-        	throw new Exception(result.getFieldError().getDefaultMessage());
-        }
         if (!result.hasErrors()){
         	advisorservice.updateAdvisor(id, advisor);;
            
