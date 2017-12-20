@@ -41,18 +41,11 @@
 									<tr class="active approw">
 										 <td>Gender:</td>
 										<td>    
-										<select name="gender">
-											<option value="M">Male</option>
-											<option value="F">Female</option>
-										</select>
-										
-										</td>
-									  <%-- <td>
-										<form:select path="myEnumVar">
-										    <form:options items="${myEnumValueList}" />
-										    model.addAttribute("myEnumValueList", theEnumType.values());
+										<form:select path="gender" multiple="false" size="1">
+											<form:option value="M" label="M"/>
+											<form:option value="F" label="F" />
 										</form:select>
-									  </td> --%>
+										</td>
 									</tr>
 									<tr class="active approw">
 									    <td>Email:</td>
@@ -81,7 +74,7 @@
 										<td><form:errors path="address.zipCode" cssClass="ui-state-error"/></td>
 									</tr>
 								</table>
-								<p align=center><input type=submit value="Add Advisor"></p>
+								<p align=center><input type=submit value="Submit"></p>
 							</form:form>
 					   </div>
 					</div>
