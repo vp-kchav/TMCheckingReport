@@ -14,20 +14,6 @@
 	<script src="<c:url value="/resources/assets/jquery-1.9.1.min.js"/>"></script>
 	<script src="<c:url value="/resources/assets/bootstrap/js/bootstrap.js"/>"></script>
 	<script src="<c:url value="/resources/assets/script.js"/>"></script>
-	
-	<!-- Owl stylesheet -->
-	<link rel="stylesheet" href="<c:url value="/resources/assets/owl-carousel/owl.carousel.css"/>">
-	<link rel="stylesheet" href="<c:url value="/resources/assets/owl-carousel/owl.theme.css"/>">
-	<script src="<c:url value="/resources/assets/owl-carousel/owl.carousel.js"/>"></script>
-	<!-- Owl stylesheet -->
-	
-	<!-- slitslider -->
-	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/assets/slitslider/css/style.css"/>" />
-	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/assets/slitslider/css/custom.css"/>" />
-	<script type="text/javascript" src="<c:url value="/resources/assets/slitslider/js/modernizr.custom.79639.js"/>"></script>
-	<script type="text/javascript" src="<c:url value="/resources/assets/slitslider/js/jquery.ba-cond.min.js"/>"></script>
-	<script type="text/javascript" src="<c:url value="/resources/assets/slitslider/js/jquery.slitslider.js"/>"></script>
-	<!-- slitslider -->
 </head>
 
 <body>

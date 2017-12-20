@@ -19,6 +19,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import mum.edu.validator.DuplicatedStudentId;
+
 @Entity
 @Table(name = "student")
 public class Student {
@@ -27,6 +29,7 @@ public class Student {
     private Long id;
     
     @NotNull()
+    @DuplicatedStudentId
     @NotEmpty(message= "NotEmpty.student.studentId")
     @Column(name = "studentId")
     private String studentId;

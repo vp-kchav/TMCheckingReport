@@ -14,4 +14,6 @@ public interface UserDao {
     List<User> getAll();
     
     User update(User user);
+    
+    User findById(String id);
 }

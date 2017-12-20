@@ -38,6 +38,7 @@
 							<c:when test="${sessionScope.currentUser != null}">
 								<li>
 									<a href="<c:url value="/logout"/>"><spring:message code="menu.logout" text="Log Out"/></a>
+									<a href="<c:url value="/changepassword"/>"><spring:message code="menu.changepassword" text="Change Password"/></a>
 								</li>
 								<li>
 									<span>${sessionScope.currentUser.username}</span>

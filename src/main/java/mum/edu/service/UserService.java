@@ -15,4 +15,5 @@ public interface UserService {
     
     User update(User user);
 
+    User findById(String id);
 }

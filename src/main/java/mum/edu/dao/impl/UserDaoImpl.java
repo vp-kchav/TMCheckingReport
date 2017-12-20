@@ -6,6 +6,8 @@ package mum.edu.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +35,14 @@ public class UserDaoImpl implements UserDao{
         return (User) sessionFactory.getCurrentSession().merge(user);
     }
 
+    @Override
+    public User findById(String id) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query =  session.createQuery("SELECT u FROM User u where studentId = :studentId");
+        query.setParameter("studentId", id);
+        return (User)query.uniqueResult();
+    }
+    
     public UserDaoImpl() {
     }
 

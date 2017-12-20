@@ -24,6 +24,7 @@
 		<intercept-url pattern="/addStudent" access="permitAll" />
 		<intercept-url pattern="/addAdvisor" access="permitAll" />
 		<intercept-url pattern="/requestChecking" access="isAuthenticated()" />
+		<intercept-url pattern="/changepassword" access="isAuthenticated()" />
 		<intercept-url pattern="/listChecking" access="isAuthenticated()" />
 		<intercept-url pattern="/listPendingChecking" access="isAuthenticated()" />
 		<intercept-url pattern="/listStudents" access="isAuthenticated()" />

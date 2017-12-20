@@ -94,21 +94,8 @@ table{background-color: #fff;}
 .search-form {margin-bottom: 50px;}
 .search-form h4{margin: 17px 0;}
 
-
-.hot-properties {margin-bottom: 50px;}
-.hot-properties img{width: 68px; height: 68px;}
-.hot-properties h4{margin-bottom: 20px;}
-.hot-properties .row{margin-bottom: 20px;}
-.hot-properties .row p{margin-bottom: 5px;}
-
 .sortby .result{margin-top: 10px;}
 
-.property-info{margin:0 0 30px 0;}
-.property-info span{margin-right: 5px;}
-.property-info p{margin-bottom:10px; }
-.property-info p.price{font-size: 28px;color: #72b70f;padding:0;border-radius: 5px;}
-.property-info .profile{margin-top: 30px;}
-.property-info .profile p{padding-left: 20px; color: #999;}
 
 .enquiry input,.enquiry textarea{margin-bottom: 10px;}
 .enquiry button{border-radius: 5px;}
@@ -117,10 +104,6 @@ table{background-color: #fff;}
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{background-color: #72b70f;border-radius: 0;color: #fff;border: none;}
 .blog .tabbable .tab-content ul li{margin: 15px 0;}
 .blog .row{margin-bottom: 50px;}
-
-.agents .row{margin-bottom:40px; }
-.agents .row h4{margin: 0;}
-
 
 
 /*footer*/
@@ -162,6 +145,12 @@ h2{font-size: 25px;}
 .title-status{
 	color: #72b70f;
     text-transform: uppercase;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.passwordchange{
+	color: blue;
     font-size: 25px;
     margin-left: 10px;
 }

@@ -28,6 +28,11 @@ public class UserServiceImpl implements UserService{
     public User update(User report) {
         return userDao.update(report);
     }
+    
+    @Transactional
+    public User findById(String id) {
+        return userDao.findById(id);
+    }
 
     public UserServiceImpl() {
     }

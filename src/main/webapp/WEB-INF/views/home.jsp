@@ -19,7 +19,11 @@
 		<div class="">
 			<div class="container">
 				<div class="spacer">
-					<div class="row">
+					<div class="row"><br/>
+						<p style="font-size:70px"><spring:message code="welcome" text="Welcome"/> </p>
+					</div>
+					<div class="row"><br/>
+						<p class="passwordchange">${text} </p>
 					</div>
 				</div>
 			</div>
